@@ -56,7 +56,7 @@ try:
             if totalRoll == 7 or totalRoll == 11:
                print '\n' + "Congratulations you rolled a: " + str(totalRoll)
                
-            # The for is in range of the totalRoll so, it will iterate through all the LED's until it gets to the end of totalRoll
+            # The for is in range of the totalRoll so, it will increment i until it reaches totalRoll
             for i in range(totalRoll):
                 time.sleep(0.5)
                 GPIO.output(ledsix[i], True)
