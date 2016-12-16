@@ -8,18 +8,19 @@ import random
 # Using GPIO numbers instead of pin numbers
 GPIO.setmode (GPIO.BCM)
 
-# The list of LED GPIO numbers, I'm going from 1-6 then back around 1-6 so that i can include two dice
+# A list of GPIO numbers, its duplicated so that the for loop can turn on the next LED after it passes the range of 6
+# so for example if the score goes past 6 it will go through the duplicate, lighting up a score from 7-12.
 ledsix = [4,17,22,10,9,11,4,17,22,10,9,11]
 
-# In range of 6 setting LED's as outputs, then setting outputs to false
+# Setting up 6 LED's as outputs, then setting them to false
 for i in range(6):
     GPIO.setup(ledsix[i], GPIO.OUT)
     GPIO.output(ledsix[i], False)
     
-# Setup input as switch
+# Setting up the switch as an input
 GPIO.setup (7, GPIO.IN)
 random.seed()
-print("Press the switch to roll")
+print"Press the switch to roll"
 print "To exit press CTRL-C"
 
 # I am using try to catch when the user presses CTRL-C
@@ -29,7 +30,7 @@ try:
     while True:
         if GPIO.input(7)==1:
 
-            # Turn off LED's in the range of 6
+            # Turn 6 LEDS to false
             for i in range(6):
                 GPIO.output(ledsix[i],False)
 
@@ -52,7 +53,7 @@ try:
             if dice == diceTwo:
                 print '\n' + "Congratulations you rolled a double of " + str(dice) + " making: " + str(totalRoll)
 
-            # If roll is equal to 7 or 11 then 
+            # If roll is equal to 7 or 11 then it will go to the print statement
             if totalRoll == 7 or totalRoll == 11:
                print '\n' + "Congratulations you rolled a: " + str(totalRoll)
                
