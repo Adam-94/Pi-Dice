@@ -17,10 +17,10 @@ for i in range(7):
 #Search terms
 TERM = [sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5], sys.argv[6], sys.argv[7], sys.argv[8]]
 
-CONSUMER_KEY = 'aauyXedurtUMHary94aelk5pL'
-CONSUMER_SECRET = 'aJIx7s4GfTeOvzFbSY7BlU4K9yXbmgYbeG0OpjMS5Wqp3eLTGk'
-ACCESS_KEY = '837236886850662400-wbjsZBfjMMZ8nYk9ppV7WVJe8yCVKMm'
-ACCESS_SECRET = 'ltTZCTLInJVbPxOcuDOGYbl2mA5EVFWwKxeF4f9f3iB8z'
+CONSUMER_KEY = ''
+CONSUMER_SECRET = ''
+ACCESS_KEY = ''
+ACCESS_SECRET = ''
 
 #Setup callback from Twython Steamer
 class BlinkyStreamer(TwythonStreamer):
